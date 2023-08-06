@@ -13,7 +13,7 @@ class TiebaSpider(object):
         res=request.urlopen(req)
         #windows会存在乱码问题，需要使用 gbk解码，并使用ignore忽略不能处理的字节
         #linux不会存在上述问题，可以直接使用decode('utf-8')解码
-        html=res.read().decode("gbk","ignore")
+        html=res.read().decode("utf-8","ignore")
         return html
     # 2.解析函数，此处代码暂时省略，还没介绍解析模块
     def parse_html(self):
