@@ -2,10 +2,14 @@
 
 import re
 
+import scrapy
 from bs4 import BeautifulSoup
 from selenium import webdriver
 
-from AcadmicGraph.items import *
+from AcadmicGraph_Spider.AcadmicGraph.items import ConferenceItem, PaperItem, JournalItem
+
+
+#from AcadmicGraph.items import *
 
 
 class DblpSpider(scrapy.Spider):
@@ -15,7 +19,7 @@ class DblpSpider(scrapy.Spider):
         super(DblpSpider, self).__init__(*args, **kwargs)
         self.urls = urls
         self.crawl_level = level
-        self.driver = webdriver.PhantomJS()
+        self.driver = webdriver.Chrome()
         # self.logger=logging.getLogger(self.__class__.__name__)
 
     def start_requests(self):

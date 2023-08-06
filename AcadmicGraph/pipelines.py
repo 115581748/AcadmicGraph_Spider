@@ -7,7 +7,11 @@
 
 import re
 import logging
-from AcadmicGraph.items import *
+
+from AcadmicGraph_Spider.AcadmicGraph.items import PaperItem, ConferenceItem, JournalItem
+
+
+#from AcadmicGraph.items import *
 
 
 # 检查PaperItem和ConferenceItem的字段，警告其中字段为空的项
